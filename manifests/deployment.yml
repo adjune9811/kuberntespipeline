@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: podyaml 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: podyaml
+  template:
+    metadata:
+      labels:
+        app: podyaml 
+    spec:
+      containers:
+        - name: podyaml 
+          image: addscontainer.azurecr.io/podyaml
+          ports:
+          - containerPort: 80
